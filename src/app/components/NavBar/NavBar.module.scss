@@ -1,0 +1,54 @@
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+
+@mixin tablet {
+  @media (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+.navContainer {
+  .navBar,
+  .navOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding: 1rem;
+    @include flex(row, space-between, stretch);
+    z-index: 1;
+  }
+
+  .navBar a,
+  .navOpen p {
+    color: red;
+    cursor: pointer;
+  }
+
+  .close {
+    color: #000;
+    cursor: pointer;
+  }
+
+  .NavOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 1rem;
+  }
+}
