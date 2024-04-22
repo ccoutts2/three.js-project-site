@@ -3,7 +3,7 @@ import styles from "./page.module.scss";
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div>Hello world</div>
+      <div></div>
     </main>
   );
 }

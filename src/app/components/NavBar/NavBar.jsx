@@ -109,13 +109,14 @@ const NavBar = () => {
           </div>
           <div className={styles.menuInfo}>
             <div className={styles.menuInfoCol}>
-              <Link href="/">X &#8599;</Link>
-              <Link href="/">portfolio</Link>
-              <Link href="/">github</Link>
-              <Link href="/">linkedin</Link>
+              <Link href="/">portfolio &#8599;</Link>
+              <Link href="/">github &#8599;</Link>
+              <Link href="/">linkedin &#8599;</Link>
             </div>
             <div className={styles.menuInfoCol}>
-              <Link href="mailto:chris.dcoutts@gmail.com">email</Link>
+              <Link href="mailto:chris.dcoutts@gmail.com">
+                chris.dcoutts@gmail.com
+              </Link>
             </div>
           </div>
         </div>

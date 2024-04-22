@@ -39,9 +39,14 @@ $desktop-breakpoint: 1280px;
   cursor: pointer;
 }
 
+.menuOpen p:nth-child(1) {
+  text-transform: lowercase;
+}
+
 .menuClose p {
   color: #000;
   cursor: pointer;
+  text-transform: lowercase;
 }
 
 .menuOverlay {
