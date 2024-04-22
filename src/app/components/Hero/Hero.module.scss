@@ -1,0 +1,64 @@
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+
+@mixin tablet {
+  @media (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+.header {
+  position: absolute;
+  bottom: 50%;
+  transform-origin: center center;
+  width: 100%;
+  display: flex;
+
+  @include tablet {
+    bottom: 35%;
+  }
+
+  .headerItem {
+    position: relative;
+    flex: 1;
+    @include flex(row, center, stretch);
+    transform: scale(0.3);
+    text-transform: uppercase;
+    font-weight: 200;
+
+    @include tablet {
+      transform: scale(0.25);
+    }
+
+    &.headerItem1 {
+      left: 18vw;
+    }
+
+    &.headerItem2 {
+      right: 18vw;
+    }
+
+    .letter {
+      font-size: 13vw;
+      @include flex(row, center, center);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+      @include tablet {
+        flex: 1;
+      }
+    }
+  }
+}
