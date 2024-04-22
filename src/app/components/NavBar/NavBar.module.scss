@@ -20,105 +20,119 @@ $desktop-breakpoint: 1280px;
   }
 }
 
-.menuBar,
-.menuOverlayBar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1;
-}
+.menuContainer {
+  .menuBar,
+  .menuOverlayBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
 
-.menuBar a,
-.menuOpen p {
-  color: #000;
-  cursor: pointer;
-}
+    @include tablet {
+      padding: 1.5rem 2.5rem;
+    }
 
-.menuOpen p:nth-child(1) {
-  text-transform: lowercase;
-}
-
-.menuClose p {
-  color: #000;
-  cursor: pointer;
-  text-transform: lowercase;
-}
-
-.menuOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  padding: 1rem;
-  background-color: #cf5b45;
-  z-index: 2;
-  display: flex;
-  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-}
-
-.menuCloseIcon {
-  flex: 2;
-  display: flex;
-  align-items: flex-end;
-  cursor: pointer;
-}
-
-.menuCopy {
-  flex: 4;
-  @include flex(column, space-between, stretch);
-  padding-top: 2rem;
-}
-
-.menuCloseIcon p {
-  font-size: 4rem;
-  -webkit-text-stroke: 3px #cf5b45;
-  line-height: 70%;
-
-  @include tablet {
-    font-size: 5rem;
+    @include desktop {
+      padding: 2rem 5rem;
+    }
   }
 
-  @include desktop {
-    font-size: 6rem;
+  .menuBar a,
+  .menuOpen p {
+    color: #000;
+    cursor: pointer;
   }
-}
 
-.menuLinkItem {
-  width: max-content;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-}
+  .menuOpen p:nth-child(1) {
+    text-transform: lowercase;
+  }
 
-.menuLinkItemHolder {
-  position: relative;
-}
+  .menuClose p {
+    color: #000;
+    cursor: pointer;
+    text-transform: lowercase;
+  }
 
-.menuLinkItemHolder a {
-  color: #000;
-  font-size: 3rem;
-  font-weight: 400;
-  letter-spacing: -0.02rem;
-  line-height: 90%;
+  .menuOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 1rem;
+    background-color: #cf5b45;
+    z-index: 2;
+    display: flex;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
 
-  @include tablet {
+  .menuCloseIcon {
+    flex: 2;
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+  }
+
+  .menuCopy {
+    flex: 4;
+    @include flex(column, space-between, stretch);
+    padding-top: 2rem;
+  }
+
+  .menuCloseIcon p {
     font-size: 4rem;
+    -webkit-text-stroke: 3px #cf5b45;
+    line-height: 70%;
+
+    @include tablet {
+      font-size: 5rem;
+    }
+
+    @include desktop {
+      font-size: 6rem;
+    }
   }
 
-  @include tablet {
-    font-size: 5rem;
+  .menuLinkItem {
+    width: max-content;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
-}
 
-.menuInfo {
-  display: flex;
-}
+  .menuLinkItemHolder {
+    position: relative;
+  }
 
-.menuInfoCol {
-  flex: 1;
-  @include flex(column, flex-end, center);
+  .menuLinkItemHolder a {
+    color: #000;
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: -0.02rem;
+    line-height: 90%;
+
+    @include tablet {
+      font-size: 4rem;
+    }
+
+    @include tablet {
+      font-size: 5rem;
+    }
+  }
+
+  .menuInfo {
+    @include flex(column, flex-start, flex-start);
+
+    @include tablet {
+      @include flex(row, flex-start, flex-end);
+    }
+  }
+
+  .menuInfoCol {
+    flex: 1;
+    @include flex(column, flex-end, flex-start);
+  }
 }

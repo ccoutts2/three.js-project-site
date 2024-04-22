@@ -89,7 +89,7 @@ const NavBar = () => {
           </div>
         </div>
 
-        <div className={styles.menuCloseIcon}>
+        <div className={styles.menuCloseIcon} onClick={toggleMenu}>
           <p>&#x2715;</p>
         </div>
         <div className={styles.menuCopy}>
@@ -109,9 +109,15 @@ const NavBar = () => {
           </div>
           <div className={styles.menuInfo}>
             <div className={styles.menuInfoCol}>
-              <Link href="/">portfolio &#8599;</Link>
-              <Link href="/">github &#8599;</Link>
-              <Link href="/">linkedin &#8599;</Link>
+              <Link target="_blank" href="https://www.chris-coutts.com/">
+                portfolio &#8599;
+              </Link>
+              <Link target="_blank" href="https://github.com/ccoutts2">
+                github &#8599;
+              </Link>
+              <Link target="_blank" href="https://www.linkedin.com/in/chris-coutts/">
+                linkedin &#8599;
+              </Link>
             </div>
             <div className={styles.menuInfoCol}>
               <Link href="mailto:chris.dcoutts@gmail.com">
